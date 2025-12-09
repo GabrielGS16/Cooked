@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deliverydrivers extends Model
 {
-    //
+    protected $fillable = ['name', 'phone', 'vehicle_type'];
 }
