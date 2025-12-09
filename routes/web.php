@@ -26,6 +26,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('stores', StoreController::class);
     Route::resource('foods', FoodController::class);
     Route::resource('coupons', CouponController::class);
-});
+}); 
 
 require __DIR__.'/auth.php';

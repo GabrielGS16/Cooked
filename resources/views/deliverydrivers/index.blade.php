@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Coupons</h1>
+    <h1>Delivery Drivers</h1>
     <ul>
-        @foreach($coupons as $coupon)
-            <li>{{ $coupon->code }} - {{ $coupon->discount_amount }}</li>
+        @foreach($Deliverydrivers as $driver)
+            <li>{{ $driver->name }} - {{ $driver->phone }}</li>
         @endforeach
     </ul>
 </body>

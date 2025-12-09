@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Deliverydrivers;
 use Illuminate\Http\Request;
 
 class DeliverydriversController extends Controller
@@ -11,7 +11,8 @@ class DeliverydriversController extends Controller
      */
     public function index()
     {
-        //
+        $Deliverydrivers = Deliverydrivers::all();
+        return view('deliverydrivers.index', compact('Deliverydrivers'));
     }
 
     /**

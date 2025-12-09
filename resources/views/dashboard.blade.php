@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+                    <a href="{{ route('categories.index') }}">Categories</a> | <a href="{{ route('coupons.index') }}">Coupons</a> | <a href="{{ route('foods.index') }}">Foods</a> | <a href="{{ route('deliverydrivers.index') }}">Delivery Drivers</a>
                 </div>
             </div>
         </div>
