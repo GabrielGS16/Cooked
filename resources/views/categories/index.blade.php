@@ -12,5 +12,7 @@
             <li>{{ $category->name }} - {{ $category->description }}</li>
         @endforeach
     </ul>
+    <br>
+    <a href="{{ route('dashboard') }}">Back to Dashboard</a>
 </body>
 </html>

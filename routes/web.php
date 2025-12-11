@@ -1,31 +1,29 @@
 <?php
-
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DeliverydriversController;
-use App\Http\Controllers\StoreController;
-use App\Http\Controllers\FoodController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\FoodController;
+use App\Http\Controllers\StoreController;
+use app\Http\Controllers\DeliverydriversController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
 
-    Route::resource('categories', CategoryController::class);
-    Route::resource('deliverydrivers', DeliverydriversController::class);
-    Route::resource('stores', StoreController::class);
-    Route::resource('foods', FoodController::class);
-    Route::resource('coupons', CouponController::class);
-}); 
-
+Route::resource('categories', CategoryController::class)
+    ->middleware(['auth']);
+Route::resource('stores', StoreController::class)
+    ->middleware(['auth']);
+Route::resource('foods', FoodController::class)
+    ->middleware(['auth']);
+Route::resource('coupons', CouponController::class)
+    ->middleware(['auth']);
+Route::resource('deliverydrivers', DeliverydriversController::class)
+    ->middleware(['auth']); 
 require __DIR__.'/auth.php';
