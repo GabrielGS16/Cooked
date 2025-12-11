@@ -13,6 +13,6 @@
         @endforeach
     </ul>
     <br>
-    <a href="{{ route('dashboard') }}">Back to Dashboard</a>
+    <a href="{{ route('dashboard') }}">Back to Dashboard</a> | a<a href="{{ route('categories.create') }}">Create New Category</a>
 </body>
 </html>
