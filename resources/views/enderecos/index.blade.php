@@ -6,11 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Delivery Drivers</h1>
+    <h1>Endereços</h1>
     <ul>
-        @foreach($Deliverydrivers as $driver)
-            <li>{{ $driver->name }} - {{ $driver->phone }}</li>
+        @foreach($enderecos as $endereco)
+            <li>{{ $endereco->rua }} - {{ $endereco->cidade }} - {{ $endereco->estado }}</li>
         @endforeach
+        <br>
     </ul>
+    <a href="{{ route('dashboard') }}">Back to Dashboard</a>
 </body>
 </html>

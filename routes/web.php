@@ -3,7 +3,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\StoreController;
-use app\Http\Controllers\DeliverydriversController;
+use app\Http\Controllers\EnderecoController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
@@ -24,6 +24,6 @@ Route::resource('foods', FoodController::class)
     ->middleware(['auth']);
 Route::resource('coupons', CouponController::class)
     ->middleware(['auth']);
-Route::resource('deliverydrivers', DeliverydriversController::class)
-    ->middleware(['auth']); 
+Route::resource('enderecos', EnderecoController::class)
+    ->middleware(['auth']);
 require __DIR__.'/auth.php';

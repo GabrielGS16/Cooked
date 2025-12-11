@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Deliverydrivers;
+use App\Models\Endereco;
 use Illuminate\Http\Request;
 
-class DeliverydriversController extends Controller
+class EnderecoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $Deliverydrivers = Deliverydrivers::all();
-        return view('deliverydrivers.index', compact('Deliverydrivers'));
+        $ederecos = Endereco::all();
+        return view('enderecos.index');
     }
 
     /**

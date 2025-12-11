@@ -12,5 +12,7 @@
             <li>{{ $coupon->code }} - {{ $coupon->discount_amount }}</li>
         @endforeach
     </ul>
+    <br>
+    <a href="{{ route('dashboard') }}">Back to Dashboard</a>
 </body>
 </html>

@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Foods</h1>
+    <ul>
+        @foreach($foods as $food)
+            <li>{{ $food->name }} - {{ $food->description }}</li>
+        @endforeach
+    </ul>
+    <br>
+    <a href="{{ route('dashboard') }}">Back to Dashboard</a>
 </body>
 </html>
