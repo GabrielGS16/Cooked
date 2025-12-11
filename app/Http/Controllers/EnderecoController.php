@@ -20,7 +20,7 @@ class EnderecoController extends Controller
      */
     public function create()
     {
-        //
+        return view('enderecos.create');
     }
 
     /**
@@ -28,7 +28,16 @@ class EnderecoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'rua' => 'required|string|max:255',
+            'cidade' => 'required|string|max:100',
+            'estado' => 'required|string|max:100',
+           
+        ]);
+        Endereco::create($request->all());
+        return redirect()->route('enderecos.index')
+                         ->with('success', 'Endereço created successfully.');
+
     }
 
     /**

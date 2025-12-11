@@ -13,6 +13,5 @@
         @endforeach
     </ul>
     <br>
-    <a href="{{ route('dashboard') }}">Back to Dashboard</a>
-</body>
+    <a href="{{ route('dashboard') }}">Back to Dashboard</a> | <a href="{{ route('coupons.create') }}">Create New Coupon</a>
 </html>

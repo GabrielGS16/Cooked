@@ -20,7 +20,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('foods.create');
     }
 
     /**
@@ -28,7 +28,14 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric',
+        ]);
+        Food::create($request->all());
+        return redirect()->route('foods.index')
+                         ->with('success', 'Food created successfully.');
     }
 
     /**

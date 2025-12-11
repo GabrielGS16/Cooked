@@ -20,7 +20,7 @@ class CouponController extends Controller
      */
     public function create()
     {
-        //
+        return view('coupons.create');
     }
 
     /**
@@ -28,7 +28,13 @@ class CouponController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'code' => 'required|string|max:50',
+            'discount_amount' => 'required|numeric',
+        ]);
+        return redirect()->route('coupons.index')
+                         ->with('success', 'Coupon created successfully.');
+
     }
 
     /**

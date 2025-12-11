@@ -20,7 +20,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        return view('stores.create');
     }
 
     /**
@@ -28,7 +28,14 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'address' => 'required|string|max:500',
+            'phone' => 'required|string|max:20',
+        ]);
+        Store::create($request->all());
+        return redirect()->route('stores.index')
+                         ->with('success', 'Store created successfully.');
     }
 
     /**
